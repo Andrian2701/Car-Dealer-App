@@ -6,15 +6,14 @@ const Button = ({ car, year }: { car: string; year: string }) => {
 
   return (
     <>
-      {isNextEnabled ? (
-        <Link href={`/result/${car}/${year}`}>
-          <button className={styles.activeBtn}>Next</button>
-        </Link>
-      ) : (
-        <button className={styles.btn} disabled>
+      <Link href={isNextEnabled ? `/result/${car}/${year}` : "#"}>
+        <button
+          className={!isNextEnabled ? styles.btn : styles.activeBtn}
+          disabled={!isNextEnabled}
+        >
           Next
         </button>
-      )}
+      </Link>
     </>
   );
 };

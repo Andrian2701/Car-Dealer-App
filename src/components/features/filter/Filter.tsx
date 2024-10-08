@@ -1,6 +1,6 @@
 "use client";
 import { ChangeEvent, useEffect, useState } from "react";
-import Button from "../ui/Button";
+import Button from "../../ui/button/Button";
 import { Car } from "@/car.types";
 import styles from "./Filter.module.css";
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import "rsuite/dist/rsuite-no-reset.min.css";
+import { CustomProvider } from "rsuite";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -18,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <CustomProvider>{children}</CustomProvider>
+      </body>
     </html>
   );
 }

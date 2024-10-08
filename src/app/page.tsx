@@ -1,11 +1,12 @@
-import Filter from "@/components/features/Filter";
+import Image from "next/image";
+import Filter from "@/components/features/filter/Filter";
 import { Vehicles } from "@/car.types";
+import car from "@/assets/car.png";
 import "./globals.css";
 
 async function getVehicles() {
   const res = await fetch(
-    "https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json",
-    { next: { revalidate: 200 } }
+    `${process.env.NEXT_PUBLIC_API_URL}/GetMakesForVehicleType/car?format=json`
   );
 
   if (!res.ok) {
@@ -19,8 +20,9 @@ export default async function Home() {
   const data: Vehicles = await getVehicles();
 
   return (
-    <main>
+    <main className="home-page">
       <Filter data={data.Results} />
+      <Image src={car} alt="car" width={300} height={300} />
     </main>
   );
 }
