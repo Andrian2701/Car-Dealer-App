@@ -1,0 +1,15 @@
+.btn {
+  padding: 0.2rem 4rem;
+  background-color: rgb(250, 144, 106);
+  color: rgb(240, 240, 236);
+  border-radius: 1rem;
+  cursor: not-allowed;
+}
+
+.activeBtn {
+  padding: 0.2rem 4rem;
+  background-color: orangered;
+  color: rgb(240, 240, 236);
+  border-radius: 1rem;
+  cursor: pointer;
+}
